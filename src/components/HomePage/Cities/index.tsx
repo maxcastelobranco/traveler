@@ -42,7 +42,7 @@ const Cities: React.FC = () => {
           }}
         >
           {leftSideCities.map(({ id, name, image, numberOfLocations }) => (
-            <City key={id} {...{ isLoading, name, image, numberOfLocations }} />
+            <City key={id} {...{ name, image, numberOfLocations }} />
           ))}
         </motion.div>
       </section>
