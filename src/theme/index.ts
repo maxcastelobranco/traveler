@@ -1,6 +1,6 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: "#115D8C",
@@ -28,57 +28,68 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: "Barlow",
       fontWeight: 600,
-      fontSize: 80,
+      fontSize: "5rem",
     },
     h2: {
       fontFamily: "Barlow",
       fontWeight: 600,
-      fontSize: 54,
+      fontSize: "3.375rem",
     },
     h3: {
       fontFamily: "Barlow",
       fontWeight: 600,
-      fontSize: 40,
+      fontSize: "2.5rem",
     },
     h4: {
       fontFamily: "Barlow",
       fontWeight: 600,
-      fontSize: 36,
+      fontSize: "2.25rem",
     },
     h5: {
       fontFamily: "Barlow",
       fontWeight: 600,
-      fontSize: 20,
+      fontSize: "1.25rem",
     },
     subtitle1: {
       fontFamily: "Heebo",
       fontWeight: 400,
-      fontSize: 16,
+      fontSize: "1rem",
     },
     subtitle2: {
       fontFamily: "Heebo",
       fontWeight: 500,
-      fontSize: 16,
+      fontSize: "1rem",
     },
     body1: {
       fontFamily: "Heebo",
       fontWeight: 400,
-      fontSize: 20,
+      fontSize: "1.25rem",
     },
     body2: {
       fontFamily: "Heebo",
       fontWeight: 400,
-      fontSize: 16,
+      fontSize: "1rem",
     },
     button: {
       fontFamily: "Heebo",
       fontWeight: 500,
-      fontSize: 18,
-      textTransform: "capitalize",
+      fontSize: "1.125rem",
     },
+    caption: {
+      fontFamily: "Roboto",
+      fontWeight: 400,
+      fontSize: "1rem",
+    },
+  },
+  shape: {
+    borderRadius: 12,
   },
 });
 
 export type Theme = typeof theme;
 
+theme = responsiveFontSizes(theme, {
+  factor: 3,
+  disableAlign: true,
+});
 export default theme;

@@ -1,19 +1,25 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import Logo from "../svgs/Logo";
 import { useStyles } from "./styles";
+import Link from "next/link";
 
-const Header: React.FC = () => {
-  const { container, goToLoginButton } = useStyles();
+interface HeaderProps {
+  boxShadow?: boolean;
+}
+const Header: React.FC<HeaderProps> = ({ boxShadow }) => {
+  const { container, buttonsContainer, goToLoginButton } = useStyles({ boxShadow });
 
   return (
     <header className={container}>
-      <Logo />
-      <Button className={goToLoginButton}>
-        <Typography variant="button" color="primary">
-          Restricted access
-        </Typography>
-      </Button>
+      <div className={buttonsContainer}>
+        <Logo />
+        <Link href="login">
+          <Button className={goToLoginButton} color="primary">
+            Restricted access
+          </Button>
+        </Link>
+      </div>
     </header>
   );
 };
