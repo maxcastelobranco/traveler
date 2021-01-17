@@ -7,7 +7,7 @@ export const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     maxWidth: "1120px",
     margin: "0 auto",
-    padding: theme.spacing(0, 5),
+    padding: theme.spacing(0, 3),
   },
   title: {
     marginBottom: theme.spacing(4),

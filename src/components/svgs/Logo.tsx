@@ -3,49 +3,63 @@ import React from "react";
 import { Theme } from "../../theme";
 import { useTheme } from "@material-ui/core";
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  backgroundColor?: string;
+}
+
+const Logo: React.FC<LogoProps> = ({ backgroundColor }) => {
   const { palette } = useTheme<Theme>();
 
   return (
     <motion.svg width={207.5} height={52.5} viewBox="0 0 166 42" fill="none">
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M17.739,18.914h-4.369c-1.681,8.023-2.558,12.182-2.558,12.51c0,1.515,1.849,1.407,3.593,0.378
-	l1.143,3.844c-1.089,0.919-2.504,1.337-4.191,1.337c-3.432,0-5.173-1.842-5.173-5.145c0.013-0.796,0.834-5.072,2.514-12.924H5
+l1.143,3.844c-1.089,0.919-2.504,1.337-4.191,1.337c-3.432,0-5.173-1.842-5.173-5.145c0.013-0.796,0.834-5.072,2.514-12.924H5
 	l0.924-4.44h3.758l0.924-4.547L11.695,5h4.682c-0.166,0.92-0.493,2.491-0.981,4.71l-1.035,4.764h4.302L17.739,18.914z"
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M36.843,14.361l-2.017,4.062c-0.656-0.183-1.337-0.256-2.017-0.217
@@ -54,20 +68,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.secondary.main,
           fill: palette.secondary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M33.462,36.953l-2.225-3.266l15.898-22.298c0.665-0.935,1.587-1.658,2.655-2.085
@@ -76,20 +95,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.secondary.main,
           fill: palette.secondary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M64.257,36.846l-6.111-25.357l2.477-2.557l12.624,2.511L83.95,8.878l2.225,3.266L70.28,34.442
@@ -98,20 +122,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M88.874,26.279c-0.108,0.68-0.163,1.368-0.165,2.056c0,2.819,1.306,4.228,3.919,4.226
@@ -122,20 +151,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M112.442,31.41c0-0.244,1.862-9.08,5.579-26.41h-4.672c-0.871,4.07-1.827,8.474-2.867,13.212
@@ -144,20 +178,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M125.291,26.279c-0.107,0.68-0.163,1.368-0.164,2.056c0,2.819,1.306,4.228,3.919,4.226
@@ -168,20 +207,25 @@ const Logo: React.FC = () => {
       />
       <motion.path
         initial={{
+          strokeWidth: 2,
           pathLength: 0,
-          stroke: palette.background.default,
-          fill: palette.background.default,
+          stroke: backgroundColor ? backgroundColor : palette.background.default,
+          fill: backgroundColor ? backgroundColor : palette.background.default,
         }}
         animate={{
           pathLength: 1,
           stroke: palette.primary.main,
           fill: palette.primary.main,
+          strokeWidth: 0,
         }}
         transition={{
           duration: 2,
           fill: {
             delay: 2,
-            duration: 1.5,
+            duration: 1.2,
+          },
+          strokeWidth: {
+            delay: 2,
           },
         }}
         d="M161,14.361l-2.017,4.062c-0.655-0.183-1.337-0.256-2.016-0.217

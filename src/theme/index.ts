@@ -85,7 +85,7 @@ let theme = createMuiTheme({
     button: {
       fontFamily: "Heebo",
       fontWeight: 500,
-      fontSize: "1.125rem",
+      fontSize: "1rem",
     },
     caption: {
       fontFamily: "Roboto",

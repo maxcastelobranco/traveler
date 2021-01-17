@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
-import Cities from "../Cities";
+import Cities from "./components/Cities";
 import Link from "next/link";
 
 const Content: React.FC = () => {
@@ -20,7 +20,7 @@ const Content: React.FC = () => {
           <br />
           all over the world.
         </Typography>
-        <Link href="/cityList">
+        <Link href="cityList">
           <Button className={button}>Discover our cities</Button>
         </Link>
       </aside>

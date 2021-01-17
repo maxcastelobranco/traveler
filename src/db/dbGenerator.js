@@ -58,4 +58,9 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
   });
 }
 
-fs.writeFile("db.json", JSON.stringify(data), console.error);
+fs.writeFile(
+  "cities.json",
+  JSON.stringify(data.cities.map(({ name }) => name).sort()),
+  console.error
+);
+// fs.writeFile("db.json", JSON.stringify(data), console.error);
