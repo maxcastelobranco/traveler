@@ -1,6 +1,18 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
 let theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        body: {
+          maxHeight: "100vh",
+          maxWidth: "100vw",
+          padding: 0,
+          overflow: "hidden",
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: "#115D8C",

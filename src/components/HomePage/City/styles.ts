@@ -3,6 +3,7 @@ import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../constants";
 
 export const useStyles = makeStyles(theme => ({
   container: {
+    opacity: 0.8,
     width: `${CITY_ITEM_WIDTH}px`,
     height: `${CITY_ITEM_HEIGHT}px`,
     borderRadius: theme.shape.borderRadius,
