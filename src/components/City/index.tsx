@@ -2,7 +2,7 @@ import React from "react";
 import { useStyles } from "./styles";
 import Image from "next/image";
 import { Typography, useTheme } from "@material-ui/core";
-import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../HomePage/constants";
+import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../pages/HomePage/constants";
 import { motion, Variants } from "framer-motion";
 import { Theme } from "../../theme";
 
@@ -24,7 +24,7 @@ const City: React.FC<CityProps> = ({
   setActiveCity,
 }) => {
   const { shadows } = useTheme<Theme>();
-  const { container, text } = useStyles({ id, activeCity });
+  const { wrapper, container, text } = useStyles({ id, activeCity });
 
   const containerVariants: Variants = {
     initial: {
@@ -43,6 +43,7 @@ const City: React.FC<CityProps> = ({
       onMouseLeave={() => {
         setActiveCity(null);
       }}
+      className={wrapper}
     >
       <motion.div
         className={container}

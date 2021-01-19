@@ -19,7 +19,11 @@ const Header: React.FC<HeaderProps> = ({ boxShadow, backgroundColor, searchCitie
   return (
     <header className={container}>
       <div className={buttonsContainer}>
-        <Logo {...{ backgroundColor }} />
+        <Link href="/">
+          <Button>
+            <Logo {...{ backgroundColor }} />
+          </Button>
+        </Link>
         {searchCities}
         <Link href="login">
           <Button className={goToLoginButton} color="primary">

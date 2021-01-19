@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStyles } from "./styles";
 import { motion } from "framer-motion";
-import City from "../../../../City";
-import { CityData } from "../../../../../hooks/useHomePageCities";
+import City from "../../../../../City";
+import { CityData } from "../../../../../../hooks/types";
 
 interface AnimatedCityProps {
   citiesLength: number;

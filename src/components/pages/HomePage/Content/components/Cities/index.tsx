@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { useHomePageCities } from "../../../../../hooks/useHomePageCities";
+import React from "react";
+import { useHomePageCities } from "../../../../../../hooks/swr/useHomePageCities";
 import { CircularProgress, Typography, useTheme } from "@material-ui/core";
 import { useStyles } from "./styles";
 import { CITY_ITEM_HEIGHT } from "../../../constants";
 import AnimatedCities from "../AnimatedCities";
+import { useActiveCity } from "../../../../../../hooks/useActiveCity";
 
 const LIMIT = 20;
 
@@ -11,7 +12,7 @@ const Cities: React.FC = () => {
   const { circularProgress } = useStyles();
   const theme = useTheme();
   const { cities, isLoading, error } = useHomePageCities(LIMIT);
-  const [activeCity, setActiveCity] = useState<string | null>(null);
+  const { activeCity, setActiveCity } = useActiveCity();
 
   if (error) {
     return (
