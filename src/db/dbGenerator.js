@@ -63,4 +63,4 @@ fs.writeFile(
   JSON.stringify(data.cities.map(({ name }) => name).sort()),
   console.error
 );
-// fs.writeFile("db.json", JSON.stringify(data), console.error);
+fs.writeFile("db.json", JSON.stringify(data), console.error);
