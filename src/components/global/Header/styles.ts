@@ -23,6 +23,7 @@ export const useStyles = makeStyles<Theme, { boxShadow?: boolean; backgroundColo
       goBackButton: {
         marginLeft: theme.spacing(1),
         backgroundColor: theme.palette.background.paper,
+        borderRadius: theme.shape.borderRadius,
       },
     })
 );

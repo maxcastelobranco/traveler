@@ -43,7 +43,7 @@ const City: NextPage = () => {
       <Header
         showGoBackButton
         middleComponent={
-          <Typography variant="h5" style={{ color: hint }}>
+          <Typography variant="h4" style={{ color: hint }}>
             City
           </Typography>
         }
