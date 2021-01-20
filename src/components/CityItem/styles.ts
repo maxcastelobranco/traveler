@@ -5,6 +5,7 @@ import { Theme } from "../../theme";
 export const useStyles = makeStyles<Theme, { id: string; activeCity: string | null }>(theme => ({
   wrapper: {
     margin: theme.spacing(3, 3),
+    cursor: "pointer",
   },
   container: {
     width: `${CITY_ITEM_WIDTH}px`,

@@ -8,7 +8,7 @@ const { natureImages } = require("./data/natureImages");
 const { streetPhotography } = require("./data/streetPhotography");
 
 const NUMBER_OF_CITIES = 100;
-const CATEGORIES = ["Tourist Spots", "Foods and Drinks", "Organized Events"];
+const CATEGORIES = ["Tourist Spots", "Food and Drinks", "Organized Events"];
 
 const cityIds = [];
 const data = { cities: [], locations: [] };
@@ -18,7 +18,7 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
 }
 
 for (let i = 0; i < NUMBER_OF_CITIES; i++) {
-  for (let l = 0; l < faker.random.number({ min: 5, max: 15 }); l++) {
+  for (let l = 0; l < faker.random.number({ min: 50, max: 100 }); l++) {
     data.locations.push({
       id: faker.random.uuid(),
       cityId:
@@ -53,6 +53,7 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
   data.cities.push({
     id,
     name: faker.address.city(),
+    description: faker.lorem.sentences(faker.random.number({ min: 3, max: 6 })),
     image: architectureImages[i],
     numberOfLocations,
   });

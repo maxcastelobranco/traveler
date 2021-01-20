@@ -1,7 +1,7 @@
 import React from "react";
 import { useStyles } from "./styles";
 import { motion } from "framer-motion";
-import City from "../../../../../City";
+import CityItem from "../../../../../CityItem";
 import { CityData } from "../../../../../../hooks/types";
 
 interface AnimatedCityProps {
@@ -33,7 +33,10 @@ const AnimatedCities: React.FC<AnimatedCityProps> = ({
         }}
       >
         {cities.map(({ id, name, image, numberOfLocations }) => (
-          <City key={id} {...{ id, name, image, numberOfLocations, activeCity, setActiveCity }} />
+          <CityItem
+            key={id}
+            {...{ id, name, image, numberOfLocations, activeCity, setActiveCity }}
+          />
         ))}
       </motion.div>
     </section>

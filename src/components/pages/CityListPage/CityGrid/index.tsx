@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import City from "../../../City";
+import CityItem from "../../../CityItem";
 import { CityData } from "../../../../hooks/types";
+import { useStyles } from "./styles";
 
 interface CityGridProps {
   renderedCities: CityData[];
@@ -10,11 +11,13 @@ interface CityGridProps {
 }
 
 const CityGrid: React.FC<CityGridProps> = ({ renderedCities, activeCity, setActiveCity }) => {
+  const { container } = useStyles();
+
   return (
-    <Grid container justify="center" alignItems="center" spacing={0}>
+    <Grid className={container} container justify="center" alignItems="center" spacing={0}>
       {renderedCities.map(({ id, image, name, numberOfLocations }) => (
         <Grid key={id} item>
-          <City {...{ id, image, name, numberOfLocations, activeCity, setActiveCity }} />
+          <CityItem {...{ id, image, name, numberOfLocations, activeCity, setActiveCity }} />
         </Grid>
       ))}
     </Grid>

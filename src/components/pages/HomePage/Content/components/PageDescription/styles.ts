@@ -8,7 +8,7 @@ export const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(4),
   },
   button: {
-    padding: theme.spacing(2, 4, 2, 4),
+    padding: theme.spacing(2, 4),
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.common.white,
     "&:hover": {

@@ -8,10 +8,11 @@ import { CityData } from "../hooks/types";
 import api from "../services/api";
 import CityGrid from "../components/pages/CityListPage/CityGrid";
 import CityGridPagination from "../components/pages/CityListPage/CityGridPagination";
+import { NextPage } from "next";
 
 const LIMIT = 8;
 
-const CityList: React.FC = () => {
+const CityList: NextPage = () => {
   const { palette } = useTheme();
   const [chosenCityName, setChosenCityName] = useState<string | null>(null);
   const { activeCity, setActiveCity } = useActiveCity();
@@ -45,7 +46,7 @@ const CityList: React.FC = () => {
     <>
       <Header
         boxShadow
-        searchCities={<SearchCities {...{ setChosenCityName }} />}
+        middleComponent={<SearchCities {...{ setChosenCityName }} />}
         backgroundColor={palette.common.white}
       />
       <CityGrid {...{ renderedCities, activeCity, setActiveCity }} />

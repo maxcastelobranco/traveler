@@ -1,6 +1,7 @@
 import React from "react";
+import { NextPage } from "next";
 
-const Login: React.FC = () => {
+const Login: NextPage = () => {
   return <></>;
 };
 

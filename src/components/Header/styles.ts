@@ -20,5 +20,9 @@ export const useStyles = makeStyles<Theme, { boxShadow?: boolean; backgroundColo
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(1),
       },
+      goBackButton: {
+        marginLeft: theme.spacing(1),
+        backgroundColor: theme.palette.background.paper,
+      },
     })
 );
