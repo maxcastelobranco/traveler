@@ -6,6 +6,7 @@ import Calendar from "../../../svgs/locationCategories/Calendar";
 import { Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
 import { motion, Transition, Variants } from "framer-motion";
+import { CATEGORY_ANIMATION_DURATION } from "../../../svgs/locationCategories/constants";
 
 interface CategoryItemProps {
   category: Category;
@@ -15,28 +16,31 @@ interface CategoryItemProps {
 
 const CategoryItem: React.FC<CategoryItemProps> = ({ category, categoryCount, index }) => {
   const { container, iconContainer } = useStyles();
+  const delay = index * CATEGORY_ANIMATION_DURATION;
 
   const variants: Variants = {
     initial: {
+      y: -30,
       opacity: 0,
     },
     animate: {
+      y: 0,
       opacity: 1,
     },
   };
   const transition: Transition = {
-    duration: 0.8,
-    ease: "easeIn",
-    delay: index * 0.8,
+    duration: CATEGORY_ANIMATION_DURATION,
+    delay,
+    type: "spring",
   };
 
   const icon =
     category === "Tourist Spots" ? (
-      <Camera delay={index} />
+      <Camera {...{ delay }} />
     ) : category === "Food and Drinks" ? (
-      <CoffeeMug delay={index} />
+      <CoffeeMug {...{ delay }} />
     ) : (
-      <Calendar delay={index} />
+      <Calendar {...{ delay }} />
     );
 
   return (

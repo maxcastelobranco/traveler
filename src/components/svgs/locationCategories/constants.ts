@@ -1,0 +1,1 @@
+export const CATEGORY_ANIMATION_DURATION = 0.8;

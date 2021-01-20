@@ -1,6 +1,7 @@
 import { motion, Transition, Variants } from "framer-motion";
 import React from "react";
 import { CategoryIconProps } from "./types";
+import { CATEGORY_ANIMATION_DURATION } from "./constants";
 
 const Calendar: React.FC<CategoryIconProps> = ({ delay }) => {
   const variants: Variants = {
@@ -14,7 +15,7 @@ const Calendar: React.FC<CategoryIconProps> = ({ delay }) => {
     },
   };
   const transition: Transition = {
-    duration: 0.8,
+    duration: CATEGORY_ANIMATION_DURATION,
     ease: "easeIn",
     delay,
   };
