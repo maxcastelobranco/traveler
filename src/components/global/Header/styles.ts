@@ -1,5 +1,5 @@
 import { createStyles, makeStyles } from "@material-ui/core/styles";
-import { Theme } from "../../theme";
+import { Theme } from "../../../theme";
 
 export const useStyles = makeStyles<Theme, { boxShadow?: boolean; backgroundColor?: string }>(
   theme =>

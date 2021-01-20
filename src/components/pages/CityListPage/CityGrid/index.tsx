@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import CityItem from "../../../CityItem";
+import CityItem from "../../../global/CityItem";
 import { CityData } from "../../../../hooks/types";
 import { useStyles } from "./styles";
 

@@ -1,6 +1,6 @@
 import { useTheme } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Header from "../components/global/Header";
 import SearchCities from "../components/pages/CityListPage/SearchCities";
 import { useActiveCity } from "../hooks/useActiveCity";
 import { useListPageCities } from "../hooks/swr/useListPageCities";

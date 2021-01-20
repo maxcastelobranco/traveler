@@ -2,12 +2,12 @@ import React from "react";
 import { useStyles } from "./styles";
 import Image from "next/image";
 import { Typography, useTheme } from "@material-ui/core";
-import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../pages/HomePage/constants";
+import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../../pages/HomePage/constants";
 import { motion, Variants } from "framer-motion";
-import { Theme } from "../../theme";
-import { CityData } from "../../hooks/types";
+import { Theme } from "../../../theme";
+import { CityData } from "../../../hooks/types";
 import Link from "next/link";
-import { preventImageDrag } from "../../utils/preventImageDrag";
+import { preventImageDrag } from "../../../utils/preventImageDrag";
 
 interface CityItemProps extends Omit<CityData, "description"> {
   activeCity: string | null;

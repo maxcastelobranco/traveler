@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { CircularProgress, Typography, useTheme } from "@material-ui/core";
 import { useCity } from "../../hooks/swr/useCity";
 import { useRouter } from "next/router";
-import Header from "../../components/Header";
+import Header from "../../components/global/Header";
 import { useLocations } from "../../hooks/swr/useLocations";
 import CityImage from "../../components/pages/CityDetails/CityImage";
 import Details from "../../components/pages/CityDetails/Details";

@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, IconButton, useTheme } from "@material-ui/core";
-import Logo from "../svgs/Logo";
+import Logo from "../../svgs/Logo";
 import { useStyles } from "./styles";
 import Link from "next/link";
 import { JSX } from "@babel/types";
 import { ArrowBack } from "@material-ui/icons";
-import { Theme } from "../../theme";
+import { Theme } from "../../../theme";
 
 interface HeaderProps {
   boxShadow?: boolean;

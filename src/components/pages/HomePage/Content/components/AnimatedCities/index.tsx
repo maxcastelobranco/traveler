@@ -1,7 +1,7 @@
 import React from "react";
 import { useStyles } from "./styles";
 import { motion } from "framer-motion";
-import CityItem from "../../../../../CityItem";
+import CityItem from "../../../../../global/CityItem";
 import { CityData } from "../../../../../../hooks/types";
 
 interface AnimatedCityProps {
