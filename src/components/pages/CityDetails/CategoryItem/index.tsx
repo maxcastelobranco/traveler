@@ -1,8 +1,8 @@
 import React from "react";
 import { Category } from "../../../../hooks/types";
-import Camera from "../../../svgs/locationCategories/Camera";
-import CoffeeMug from "../../../svgs/locationCategories/CoffeeMug";
-import Calendar from "../../../svgs/locationCategories/Calendar";
+import Camera from "../../../svgs/locationCategories/animated/Camera";
+import CoffeeMug from "../../../svgs/locationCategories/animated/CoffeeMug";
+import Calendar from "../../../svgs/locationCategories/animated/Calendar";
 import { Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
 import { motion, Transition, Variants } from "framer-motion";

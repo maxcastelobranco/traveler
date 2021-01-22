@@ -8,9 +8,11 @@ export const useStyles = makeStyles<Theme>(theme => ({
     display: "flex",
   },
   contentContainer: {
+    margin: theme.spacing(3),
+  },
+  row: {
     display: "flex",
     flexDirection: "row",
-    margin: theme.spacing(3),
   },
   categoriesContainer: {
     display: "flex",

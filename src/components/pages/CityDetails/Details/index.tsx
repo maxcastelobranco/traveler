@@ -3,6 +3,7 @@ import { categories, CityData, LocationData } from "../../../../hooks/types";
 import CategoryItem from "../CategoryItem";
 import { useStyles } from "./styles";
 import Description from "../Description";
+import TopLocations from "../TopLocations";
 
 interface DetailsProps {
   city: CityData;
@@ -10,7 +11,7 @@ interface DetailsProps {
 }
 
 const Details: React.FC<DetailsProps> = ({ city, locations }) => {
-  const { container, contentContainer, categoriesContainer } = useStyles();
+  const { container, contentContainer, categoriesContainer, row } = useStyles();
   const { name, description } = city;
 
   const { numberOfTouristSpots, numberOfFoodsAndDrinks, numberOfOrganizedEvents } = useMemo(() => {
@@ -45,19 +46,22 @@ const Details: React.FC<DetailsProps> = ({ city, locations }) => {
   return (
     <main className={container}>
       <div className={contentContainer}>
-        <Description {...{ name, description }} />
-        <div className={categoriesContainer}>
-          {categories.map((category, index) => {
-            const categoryCount =
-              category === "Tourist Spots"
-                ? numberOfTouristSpots
-                : category === "Food and Drinks"
-                ? numberOfFoodsAndDrinks
-                : numberOfOrganizedEvents;
+        <div className={row}>
+          <Description {...{ name, description }} />
+          <div className={categoriesContainer}>
+            {categories.map((category, index) => {
+              const categoryCount =
+                category === "Tourist Spots"
+                  ? numberOfTouristSpots
+                  : category === "Food and Drinks"
+                  ? numberOfFoodsAndDrinks
+                  : numberOfOrganizedEvents;
 
-            return <CategoryItem key={category} {...{ category, categoryCount, index }} />;
-          })}
+              return <CategoryItem key={category} {...{ category, categoryCount, index }} />;
+            })}
+          </div>
         </div>
+        <TopLocations {...{ topLocations }} />
       </div>
     </main>
   );

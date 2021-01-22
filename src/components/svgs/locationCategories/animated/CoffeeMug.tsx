@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, Transition, Variants } from "framer-motion";
-import { CategoryIconProps } from "./types";
-import { CATEGORY_ANIMATION_DURATION } from "./constants";
+import { CategoryIconProps } from "../types";
+import { CATEGORY_ANIMATION_DURATION } from "../constants";
 
 const coffeeSteamPaths = ["M9.167,3.333v5", "M15.833,3.333v5", "M22.5,3.333v5"];
 

@@ -60,6 +60,7 @@ const CityItem: React.FC<CityItemProps> = ({
             alt={name}
             width={CITY_ITEM_WIDTH}
             height={CITY_ITEM_HEIGHT * 0.75}
+            objectFit="cover"
           />
           <Typography variant="h5" className={text}>
             {name}

@@ -4,11 +4,13 @@ import { makeStyles } from "@material-ui/styles";
 export const useStyles = makeStyles<Theme>(theme => ({
   container: {
     display: "flex",
-    flex: 1,
     flexDirection: "column",
-    paddingRight: theme.spacing(4),
+    margin: theme.spacing(8, 0),
   },
-  title: {
-    margin: theme.spacing(2, 0),
+  locationsContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    padding: theme.spacing(2, 0),
   },
 }));

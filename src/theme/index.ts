@@ -4,6 +4,10 @@ let theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       "@global": {
+        html: {
+          scrollbarWidth: "thin",
+          scrollbarColor: "#115D8C #92cdf2",
+        },
         body: {
           maxWidth: "100vw",
           overflowX: "hidden",

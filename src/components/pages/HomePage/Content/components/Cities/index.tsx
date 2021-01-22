@@ -4,7 +4,7 @@ import { CircularProgress, Typography, useTheme } from "@material-ui/core";
 import { useStyles } from "./styles";
 import { CITY_ITEM_HEIGHT } from "../../../constants";
 import AnimatedCities from "../AnimatedCities";
-import { useActiveCity } from "../../../../../../hooks/useActiveCity";
+import { useActiveItem } from "../../../../../../hooks/useActiveItem";
 
 const LIMIT = 20;
 
@@ -12,7 +12,7 @@ const Cities: React.FC = () => {
   const { circularProgress } = useStyles();
   const theme = useTheme();
   const { cities, isLoading, error } = useHomePageCities(LIMIT);
-  const { activeCity, setActiveCity } = useActiveCity();
+  const { activeItem: activeCity, setActiveItem: setActiveCity } = useActiveItem();
 
   if (error) {
     return (

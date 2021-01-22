@@ -1,7 +1,7 @@
 import { motion, Transition, Variants } from "framer-motion";
 import React from "react";
-import { CategoryIconProps } from "./types";
-import { CATEGORY_ANIMATION_DURATION } from "./constants";
+import { CategoryIconProps } from "../types";
+import { CATEGORY_ANIMATION_DURATION } from "../constants";
 
 const variants: Variants = {
   initial: {

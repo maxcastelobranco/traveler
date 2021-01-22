@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({
       text: { hint },
     },
   } = useTheme<Theme>();
+
   const { container, buttonsContainer, goBackButton, goToLoginButton } = useStyles({
     boxShadow,
     backgroundColor,

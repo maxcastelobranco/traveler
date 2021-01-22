@@ -15,7 +15,9 @@ const Description: React.FC<DescriptionProps> = ({ name, description }) => {
       <Typography variant="h3" className={title}>
         {name}
       </Typography>
-      <Typography variant="body1">{description}</Typography>
+      <Typography variant="body1" align="justify">
+        {description}
+      </Typography>
     </div>
   );
 };
