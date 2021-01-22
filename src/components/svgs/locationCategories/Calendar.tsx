@@ -3,17 +3,16 @@ import React from "react";
 import { CategoryIconProps } from "./types";
 import { CATEGORY_ANIMATION_DURATION } from "./constants";
 
+const variants: Variants = {
+  initial: {
+    pathLength: 0,
+  },
+  animate: {
+    pathLength: 1,
+  },
+};
+
 const Calendar: React.FC<CategoryIconProps> = ({ delay }) => {
-  const variants: Variants = {
-    initial: {
-      opacity: 0,
-      pathLength: 0,
-    },
-    animate: {
-      opacity: 1,
-      pathLength: 1,
-    },
-  };
   const transition: Transition = {
     duration: CATEGORY_ANIMATION_DURATION,
     ease: "easeIn",

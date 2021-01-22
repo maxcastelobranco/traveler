@@ -1,4 +1,3 @@
-import React from "react";
 import { NextPage } from "next";
 
 import { CircularProgress, Typography, useTheme } from "@material-ui/core";

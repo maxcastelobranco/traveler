@@ -12,19 +12,10 @@ export const useStyles = makeStyles<Theme>(theme => ({
     flexDirection: "row",
     margin: theme.spacing(3),
   },
-  descriptionContainer: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "column",
-    paddingRight: theme.spacing(3),
-  },
   categoriesContainer: {
     display: "flex",
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-  },
-  title: {
-    margin: theme.spacing(2, 0),
   },
 }));

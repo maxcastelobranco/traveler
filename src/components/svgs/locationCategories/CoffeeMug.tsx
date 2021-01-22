@@ -5,17 +5,16 @@ import { CATEGORY_ANIMATION_DURATION } from "./constants";
 
 const coffeeSteamPaths = ["M9.167,3.333v5", "M15.833,3.333v5", "M22.5,3.333v5"];
 
+const variants: Variants = {
+  initial: {
+    pathLength: 0,
+  },
+  animate: {
+    pathLength: 1,
+  },
+};
+
 const CoffeeMug: React.FC<CategoryIconProps> = ({ delay }) => {
-  const variants: Variants = {
-    initial: {
-      opacity: 0,
-      pathLength: 0,
-    },
-    animate: {
-      opacity: 1,
-      pathLength: 1,
-    },
-  };
   const transition: Transition = {
     duration: CATEGORY_ANIMATION_DURATION,
     ease: "easeIn",

@@ -14,24 +14,26 @@ interface CategoryItemProps {
   index: number;
 }
 
+const variants: Variants = {
+  initial: {
+    y: -30,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const CategoryItem: React.FC<CategoryItemProps> = ({ category, categoryCount, index }) => {
   const { container, iconContainer } = useStyles();
   const delay = index * CATEGORY_ANIMATION_DURATION;
 
-  const variants: Variants = {
-    initial: {
-      y: -30,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-    },
-  };
   const transition: Transition = {
     duration: CATEGORY_ANIMATION_DURATION,
     delay,
     type: "spring",
+    bounce: 0.6,
   };
 
   const icon =

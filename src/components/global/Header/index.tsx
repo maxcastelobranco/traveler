@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className={container}>
       <div className={buttonsContainer}>
-        <Link href={goBackButton ? "/cityList" : "/"}>
+        <Link href={showGoBackButton ? "/cityList" : "/"}>
           <Button>
             <Logo {...{ backgroundColor }} />
             {showGoBackButton && (

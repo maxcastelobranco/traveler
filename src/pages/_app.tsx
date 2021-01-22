@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import theme from "../theme";
 import { ThemeProvider } from "@material-ui/styles";
 import { CssBaseline } from "@material-ui/core";
-import React from "react";
 
 const Traveler: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (

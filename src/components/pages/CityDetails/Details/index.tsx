@@ -1,8 +1,8 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
+import React, { useMemo } from "react";
 import { categories, CityData, LocationData } from "../../../../hooks/types";
 import CategoryItem from "../CategoryItem";
 import { useStyles } from "./styles";
+import Description from "../Description";
 
 interface DetailsProps {
   city: CityData;
@@ -10,40 +10,42 @@ interface DetailsProps {
 }
 
 const Details: React.FC<DetailsProps> = ({ city, locations }) => {
-  const {
-    container,
-    contentContainer,
-    descriptionContainer,
-    categoriesContainer,
-    title,
-  } = useStyles();
+  const { container, contentContainer, categoriesContainer } = useStyles();
   const { name, description } = city;
 
-  let numberOfTouristSpots = 0;
-  let numberOfFoodsAndDrinks = 0;
-  let numberOfOrganizedEvents = 0;
+  const { numberOfTouristSpots, numberOfFoodsAndDrinks, numberOfOrganizedEvents } = useMemo(() => {
+    let numberOfTouristSpots = 0;
+    let numberOfFoodsAndDrinks = 0;
+    let numberOfOrganizedEvents = 0;
 
-  for (let i = 0; i < locations.length; i++) {
-    if (locations[i].category === "Tourist Spots") {
-      numberOfTouristSpots++;
+    for (let i = 0; i < locations.length; i++) {
+      if (locations[i].category === "Tourist Spots") {
+        numberOfTouristSpots++;
+      }
+      if (locations[i].category === "Food and Drinks") {
+        numberOfFoodsAndDrinks++;
+      }
+      if (locations[i].category === "Organized Events") {
+        numberOfOrganizedEvents++;
+      }
     }
-    if (locations[i].category === "Food and Drinks") {
-      numberOfFoodsAndDrinks++;
-    }
-    if (locations[i].category === "Organized Events") {
-      numberOfOrganizedEvents++;
-    }
-  }
+
+    return {
+      numberOfTouristSpots,
+      numberOfFoodsAndDrinks,
+      numberOfOrganizedEvents,
+    };
+  }, [locations]);
+
+  const topLocations = useMemo(
+    () => locations.sort((a, b) => (a.rating > b.rating ? -1 : 1)).slice(0, 4),
+    [locations]
+  );
 
   return (
     <main className={container}>
       <div className={contentContainer}>
-        <div className={descriptionContainer}>
-          <Typography variant="h3" className={title}>
-            {name}
-          </Typography>
-          <Typography variant="body1">{description}</Typography>
-        </div>
+        <Description {...{ name, description }} />
         <div className={categoriesContainer}>
           {categories.map((category, index) => {
             const categoryCount =
