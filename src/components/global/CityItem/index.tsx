@@ -14,6 +14,15 @@ interface CityItemProps extends Omit<CityData, "description"> {
   setActiveCity: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
+const variants: Variants = {
+  initial: {
+    scale: 0,
+  },
+  animate: {
+    scale: 1,
+  },
+};
+
 const CityItem: React.FC<CityItemProps> = ({
   id,
   image,
@@ -24,15 +33,6 @@ const CityItem: React.FC<CityItemProps> = ({
 }) => {
   const { shadows } = useTheme<Theme>();
   const { wrapper, container, text } = useStyles({ id, activeCity });
-
-  const containerVariants: Variants = {
-    initial: {
-      scale: 0,
-    },
-    animate: {
-      scale: 1,
-    },
-  };
 
   return (
     <Link href={`/city/${id}`}>
@@ -46,8 +46,8 @@ const CityItem: React.FC<CityItemProps> = ({
         className={wrapper}
       >
         <motion.div
+          {...{ variants }}
           className={container}
-          variants={containerVariants}
           initial="initial"
           animate="animate"
           whileHover={{

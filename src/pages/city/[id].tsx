@@ -1,20 +1,14 @@
 import { NextPage } from "next";
 
-import { CircularProgress, Typography, useTheme } from "@material-ui/core";
+import { CircularProgress, Typography } from "@material-ui/core";
 import { useCity } from "../../hooks/swr/useCity";
 import { useRouter } from "next/router";
 import Header from "../../components/global/Header";
 import { useLocations } from "../../hooks/swr/useLocations";
 import CityImage from "../../components/pages/CityDetails/CityImage";
 import Details from "../../components/pages/CityDetails/Details";
-import { Theme } from "../../theme";
 
 const City: NextPage = () => {
-  const {
-    palette: {
-      text: { hint },
-    },
-  } = useTheme<Theme>();
   const {
     query: { id },
   } = useRouter();
@@ -39,14 +33,7 @@ const City: NextPage = () => {
 
   return (
     <>
-      <Header
-        showGoBackButton
-        middleComponent={
-          <Typography variant="h4" style={{ color: hint }}>
-            City
-          </Typography>
-        }
-      />
+      <Header showGoBackButton middleComponent={<Typography variant="h4">City</Typography>} />
       <CityImage src={image} {...{ name }} />
       <Details {...{ city, locations }} />
     </>

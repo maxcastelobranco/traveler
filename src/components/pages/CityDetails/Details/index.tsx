@@ -4,6 +4,7 @@ import CategoryItem from "../CategoryItem";
 import { useStyles } from "./styles";
 import Description from "../Description";
 import TopLocations from "../TopLocations";
+import LocationGrid from "../LocationGrid";
 
 interface DetailsProps {
   city: CityData;
@@ -62,6 +63,7 @@ const Details: React.FC<DetailsProps> = ({ city, locations }) => {
           </div>
         </div>
         <TopLocations {...{ topLocations }} />
+        <LocationGrid {...{ locations }} />
       </div>
     </main>
   );
