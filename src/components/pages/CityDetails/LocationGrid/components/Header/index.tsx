@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import { Button, Typography, useTheme } from "@material-ui/core";
 import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
 import { useStyles } from "./styles";
@@ -32,38 +32,15 @@ const transition: Transition = {
 };
 
 const Header: React.FC<HeaderProps> = ({ selectedCategory, setSelectedCategory }) => {
-  const [offsetTop, setOffsetTop] = useState(0);
-  const [isSticky, setSticky] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const { container, categoriesContainer, categoryButton, underline } = useStyles({ isSticky });
+  const { container, categoriesContainer, categoryButton, underline } = useStyles();
   const {
     palette: {
       text: { primary, secondary },
     },
   } = useTheme<Theme>();
 
-  const handleScroll = useCallback(() => {
-    if (ref.current && window && offsetTop !== 0) {
-      setSticky(window.pageYOffset >= offsetTop);
-    }
-  }, [offsetTop]);
-
-  useLayoutEffect(() => {
-    if (ref.current) {
-      setOffsetTop(ref.current.offsetTop);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", () => handleScroll);
-    };
-  }, [handleScroll]);
-
   return (
-    <div {...{ ref }} className={container}>
+    <div className={container}>
       <Typography variant="h4">Discover all locations</Typography>
       <div className={categoriesContainer}>
         {categories.map(category => {
