@@ -39,10 +39,10 @@ const Details: React.FC<DetailsProps> = ({ city, locations }) => {
     };
   }, [locations]);
 
-  const topLocations = useMemo(
-    () => locations.sort((a, b) => (a.rating > b.rating ? -1 : 1)).slice(0, 4),
-    [locations]
-  );
+  const topLocations = useMemo(() => {
+    const newLocations = [...locations];
+    return newLocations.sort((a, b) => (a.rating > b.rating ? -1 : 1)).slice(0, 4);
+  }, [locations]);
 
   return (
     <main className={container}>

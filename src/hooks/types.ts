@@ -7,6 +7,7 @@ export interface CityData {
 }
 
 export type Category = "Tourist Spots" | "Food and Drinks" | "Organized Events";
+export type CategoryOptions = Category | "All";
 
 export const categories: Category[] = ["Tourist Spots", "Food and Drinks", "Organized Events"];
 

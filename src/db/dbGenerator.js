@@ -1,11 +1,17 @@
 const fs = require("fs");
 
 const faker = require("faker");
-faker.seed(69);
 
 const { architectureImages } = require("./data/architectureImages");
-const { natureImages } = require("./data/natureImages");
-const { streetPhotography } = require("./data/streetPhotography");
+const { touristSpots } = require("./data/touristSpots");
+const { foodAndDrinks } = require("./data/foodAndDrinks");
+const { organizedEvents } = require("./data/organizedEvents");
+
+const shuffleStuff = () => {
+  faker.helpers.shuffle(touristSpots);
+  faker.helpers.shuffle(foodAndDrinks);
+  faker.helpers.shuffle(organizedEvents);
+};
 
 const NUMBER_OF_CITIES = 100;
 const CATEGORIES = ["Tourist Spots", "Food and Drinks", "Organized Events"];
@@ -18,7 +24,10 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
 }
 
 for (let i = 0; i < NUMBER_OF_CITIES; i++) {
-  for (let l = 0; l < faker.random.number({ min: 50, max: 100 }); l++) {
+  for (let l = 0; l < faker.random.number({ min: 50, max: 130 }); l++) {
+    shuffleStuff();
+    const category = CATEGORIES[faker.random.number({ min: 0, max: CATEGORIES.length - 1 })];
+
     data.locations.push({
       id: faker.random.uuid(),
       cityId:
@@ -30,12 +39,17 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
         ],
       name: faker.address.streetName(),
       description: faker.lorem.sentences(faker.random.number({ min: 1, max: 3 })),
-      category: CATEGORIES[faker.random.number({ min: 0, max: CATEGORIES.length - 1 })],
+      category,
       rating: faker.random.float({
         min: 1,
         max: 5,
       }),
-      image: faker.random.boolean() ? natureImages[i] : streetPhotography[i],
+      image:
+        category === "Tourist Spots"
+          ? touristSpots[i]
+          : category === "Food and Drinks"
+          ? foodAndDrinks[i]
+          : organizedEvents[i],
     });
   }
 }

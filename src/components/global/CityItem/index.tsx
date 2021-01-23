@@ -8,6 +8,7 @@ import { Theme } from "../../../theme";
 import { CityData } from "../../../hooks/types";
 import Link from "next/link";
 import { preventImageDrag } from "../../../utils/preventImageDrag";
+import { Skeleton } from "@material-ui/lab";
 
 interface CityItemProps extends Omit<CityData, "description"> {
   activeCity: string | null;
