@@ -1,11 +1,13 @@
 const fs = require("fs");
 
 const faker = require("faker");
+faker.seed(69);
 
 const { architectureImages } = require("./data/architectureImages");
 const { touristSpots } = require("./data/touristSpots");
 const { foodAndDrinks } = require("./data/foodAndDrinks");
 const { organizedEvents } = require("./data/organizedEvents");
+const { userImages } = require("./data/users");
 
 const shuffleStuff = () => {
   faker.helpers.shuffle(touristSpots);
@@ -17,7 +19,7 @@ const NUMBER_OF_CITIES = 100;
 const CATEGORIES = ["Tourist Spots", "Food and Drinks", "Organized Events"];
 
 const cityIds = [];
-const data = { cities: [], locations: [] };
+const data = { cities: [], locations: [], comments: [] };
 
 for (let i = 0; i < NUMBER_OF_CITIES; i++) {
   cityIds.push(faker.random.uuid());
@@ -40,10 +42,6 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
       name: faker.address.streetName(),
       description: faker.lorem.sentences(faker.random.number({ min: 1, max: 3 })),
       category,
-      rating: faker.random.float({
-        min: 1,
-        max: 5,
-      }),
       image:
         category === "Tourist Spots"
           ? touristSpots[i]
@@ -71,6 +69,33 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
     image: architectureImages[i],
     numberOfLocations,
   });
+}
+
+for (let l = 0; l < data.locations.length; l++) {
+  const numberOfComments = faker.random.number({ min: 5, max: 20 });
+  let totalRating = 0;
+
+  for (let c = 0; c < numberOfComments; c++) {
+    const rating = faker.random.float({
+      min: 1,
+      max: 5,
+    });
+
+    totalRating += rating;
+
+    faker.helpers.shuffle(userImages);
+
+    data.comments.push({
+      id: faker.random.uuid(),
+      locationId: data.locations[l].id,
+      username: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      image: userImages[c],
+      comment: faker.lorem.sentences(faker.random.number({ min: 2, max: 5 })),
+      rating,
+    });
+  }
+
+  data.locations[l].rating = Number((totalRating / numberOfComments).toPrecision(3));
 }
 
 fs.writeFile(

@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+public/architectureImages
+public/foodAndDrinks
+public/organizedEvents
+public/touristSpots
+public/userImages
