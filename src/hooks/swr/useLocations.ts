@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { fetcher } from "../../services/api";
-import { LocationData } from "../types";
+import { LocationData } from "./types";
 
 export const useLocations = (cityId: string) => {
   const { data: locations, error } = useSWR<LocationData[]>(

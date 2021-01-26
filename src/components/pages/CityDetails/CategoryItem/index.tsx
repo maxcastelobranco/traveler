@@ -1,5 +1,5 @@
 import React from "react";
-import { Category } from "../../../../hooks/types";
+import { Category } from "../../../../hooks/swr/types";
 import Camera from "../../../svgs/locationCategories/animated/Camera";
 import CoffeeMug from "../../../svgs/locationCategories/animated/CoffeeMug";
 import Calendar from "../../../svgs/locationCategories/animated/Calendar";

@@ -40,7 +40,7 @@ for (let i = 0; i < NUMBER_OF_CITIES; i++) {
           })
         ],
       name: faker.address.streetName(),
-      description: faker.lorem.sentences(faker.random.number({ min: 1, max: 3 })),
+      description: faker.lorem.sentences(faker.random.number({ min: 3, max: 6 })),
       category,
       image:
         category === "Tourist Spots"
@@ -90,7 +90,7 @@ for (let l = 0; l < data.locations.length; l++) {
       locationId: data.locations[l].id,
       username: `${faker.name.firstName()} ${faker.name.lastName()}`,
       image: userImages[c],
-      comment: faker.lorem.sentences(faker.random.number({ min: 2, max: 5 })),
+      comment: faker.lorem.sentences(faker.random.number({ min: 4, max: 8 })),
       rating,
     });
   }

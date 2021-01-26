@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LocationData } from "../../../../hooks/types";
+import { LocationData } from "../../../../hooks/swr/types";
 import { Typography } from "@material-ui/core";
 import { Star } from "@material-ui/icons";
 import { useStyles } from "./styles";

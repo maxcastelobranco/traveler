@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Typography, useTheme } from "@material-ui/core";
 import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
 import { useStyles } from "./styles";
-import { CategoryOptions } from "../../../../../../hooks/types";
+import { CategoryOptions } from "../../../../../../hooks/swr/types";
 import { Theme } from "../../../../../../theme";
 
 interface HeaderProps {

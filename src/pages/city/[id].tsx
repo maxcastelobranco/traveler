@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import { CircularProgress, Typography } from "@material-ui/core";
+import { LinearProgress, Typography } from "@material-ui/core";
 import { useCity } from "../../hooks/swr/useCity";
 import { useRouter } from "next/router";
 import Header from "../../components/global/Header";
@@ -17,7 +17,7 @@ const City: NextPage = () => {
   const { locations, error, isLoading: areLocationsLoading } = useLocations(id as string);
 
   if (isCityLoading || areLocationsLoading || !city || !locations) {
-    return <CircularProgress />;
+    return <LinearProgress />;
   }
 
   if (error || cityError) {

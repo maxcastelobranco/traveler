@@ -1,13 +1,13 @@
 import useSWR from "swr";
 import { fetcher } from "../../services/api";
-import { CityData } from "../types";
+import { CityData } from "./types";
 
 export const useCity = (id: string) => {
-  const { data, error } = useSWR<CityData[]>(`cities?id=${id}`, fetcher);
+  const { data: city, error } = useSWR<CityData>(`cities/${id}`, fetcher);
 
   return {
-    city: data && data[0],
+    city,
     error,
-    isLoading: !data && !error,
+    isLoading: !city && !error,
   };
 };

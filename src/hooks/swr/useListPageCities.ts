@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import api from "../../services/api";
-import { CityData } from "../types";
+import { CityData } from "./types";
 import React from "react";
 
 interface UseListPageCitiesParams {

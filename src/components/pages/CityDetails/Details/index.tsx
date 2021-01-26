@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { categories, CityData, LocationData } from "../../../../hooks/types";
+import { categories, CityData, LocationData } from "../../../../hooks/swr/types";
 import CategoryItem from "../CategoryItem";
 import { useStyles } from "./styles";
 import Description from "../Description";

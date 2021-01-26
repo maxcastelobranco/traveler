@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 import { useStyles } from "./styles";
-import { CategoryOptions, LocationData } from "../../../../hooks/types";
+import { CategoryOptions, LocationData } from "../../../../hooks/swr/types";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationItem from "../LocationItem";
 import { useActiveItem } from "../../../../hooks/useActiveItem";

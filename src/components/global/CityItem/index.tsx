@@ -1,14 +1,12 @@
 import React from "react";
 import { useStyles } from "./styles";
-import Image from "next/image";
 import { Typography, useTheme } from "@material-ui/core";
-import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../../pages/HomePage/constants";
+import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../../pages/Home/constants";
 import { motion, Variants } from "framer-motion";
 import { Theme } from "../../../theme";
-import { CityData } from "../../../hooks/types";
+import { CityData } from "../../../hooks/swr/types";
 import Link from "next/link";
 import { preventImageDrag } from "../../../utils/preventImageDrag";
-import { Skeleton } from "@material-ui/lab";
 
 interface CityItemProps extends Omit<CityData, "description"> {
   activeCity: string | null;
@@ -55,13 +53,15 @@ const CityItem: React.FC<CityItemProps> = ({
             boxShadow: shadows[1],
           }}
         >
-          <Image
+          <img
             {...preventImageDrag}
             src={image}
             alt={name}
             width={CITY_ITEM_WIDTH}
             height={CITY_ITEM_HEIGHT * 0.75}
-            objectFit="cover"
+            style={{
+              objectFit: "cover",
+            }}
           />
           <Typography variant="h5" className={text}>
             {name}

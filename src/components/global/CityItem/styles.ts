@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../../pages/HomePage/constants";
+import { CITY_ITEM_WIDTH, CITY_ITEM_HEIGHT } from "../../pages/Home/constants";
 import { Theme } from "../../../theme";
 
 export const useStyles = makeStyles<Theme, { id: string; activeCity: string | null }>(theme => ({

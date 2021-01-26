@@ -1,13 +1,13 @@
 import { useTheme } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import Header from "../components/global/Header";
-import SearchCities from "../components/pages/CityListPage/SearchCities";
+import SearchCities from "../components/pages/CityList/SearchCities";
 import { useActiveItem } from "../hooks/useActiveItem";
 import { useListPageCities } from "../hooks/swr/useListPageCities";
-import { CityData } from "../hooks/types";
+import { CityData } from "../hooks/swr/types";
 import api from "../services/api";
-import CityGrid from "../components/pages/CityListPage/CityGrid";
-import CityGridPagination from "../components/pages/CityListPage/CityGridPagination";
+import CityGrid from "../components/pages/CityList/CityGrid";
+import CityGridPagination from "../components/pages/CityList/CityGridPagination";
 import { NextPage } from "next";
 
 const LIMIT = 8;

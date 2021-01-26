@@ -5,6 +5,7 @@ import { useStyles } from "./styles";
 import Link from "next/link";
 import { JSX } from "@babel/types";
 import { ArrowBack } from "@material-ui/icons";
+import { useRouter } from "next/router";
 
 interface HeaderProps {
   boxShadow?: boolean;
@@ -18,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({
   backgroundColor,
   middleComponent = <></>,
 }) => {
+  const { back } = useRouter();
   const { container, buttonsContainer, goBackButton, goToLoginButton } = useStyles({
     boxShadow,
     backgroundColor,
@@ -26,18 +28,14 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className={container}>
       <div className={buttonsContainer}>
-        <Link href={showGoBackButton ? "/cityList" : "/"}>
-          <Button>
-            <Logo {...{ backgroundColor }} />
-            {showGoBackButton && (
-              <Link href="/cityList">
-                <IconButton className={goBackButton}>
-                  <ArrowBack />
-                </IconButton>
-              </Link>
-            )}
-          </Button>
-        </Link>
+        <Button onClick={back}>
+          <Logo {...{ backgroundColor }} />
+          {showGoBackButton && (
+            <IconButton className={goBackButton}>
+              <ArrowBack />
+            </IconButton>
+          )}
+        </Button>
         {middleComponent}
         <Link href="login">
           <Button className={goToLoginButton} color="primary">

@@ -1,5 +1,5 @@
 import React from "react";
-import { LocationData } from "../../../../hooks/types";
+import { LocationData } from "../../../../hooks/swr/types";
 import { Typography } from "@material-ui/core";
 import LocationItem from "../LocationItem";
 import { useStyles } from "./styles";
