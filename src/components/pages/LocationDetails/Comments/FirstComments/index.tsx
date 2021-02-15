@@ -22,7 +22,9 @@ const FirstComments: React.FC<FirstCommentsProps> = ({ firstComments }) => {
               <Typography variant="h5">{username}</Typography>
               <Rating value={rating} precision={0.5} readOnly emptyIcon={<StarBorder />} />
             </div>
-            <Typography variant="subtitle1">{comment}</Typography>
+            <Typography variant="subtitle1" align="justify">
+              {comment}
+            </Typography>
           </article>
         </div>
       ))}

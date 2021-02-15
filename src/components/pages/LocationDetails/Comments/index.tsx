@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useComments } from "../../../../hooks/swr/useComments";
 import { LinearProgress, Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
 import Header from "./Header";
 import FirstComments from "./FirstComments";
+import AllComments from "./AllComments";
 
 interface CommentProps {
   locationId: string;
@@ -13,11 +14,17 @@ interface CommentProps {
 const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
   const { container } = useStyles();
   const { comments, error, isLoading } = useComments(locationId);
+  const [allCommentsDialogOpen, setAllCommentsDialogOpen] = useState(false);
+  const openAllCommentsDialog = () => {
+    setAllCommentsDialogOpen(true);
+  };
+  const closeAllCommentsDialog = () => {
+    setAllCommentsDialogOpen(false);
+  };
 
   if (error) {
     return <Typography>{error.message}</Typography>;
   }
-
   if (isLoading || !comments) {
     return <LinearProgress />;
   }
@@ -26,8 +33,13 @@ const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
 
   return (
     <div className={container}>
-      <Header {...{ initialRating }} />
+      <Header {...{ initialRating, openAllCommentsDialog }} />
       <FirstComments {...{ firstComments }} />
+      <AllComments
+        open={allCommentsDialogOpen}
+        onClose={closeAllCommentsDialog}
+        {...{ comments, initialRating }}
+      />
     </div>
   );
 };

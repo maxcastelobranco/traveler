@@ -5,9 +5,10 @@ import { useStyles } from "./styles";
 
 interface HeaderProps {
   initialRating: number;
+  openAllCommentsDialog(): void;
 }
 
-const Header: React.FC<HeaderProps> = ({ initialRating }) => {
+const Header: React.FC<HeaderProps> = ({ initialRating, openAllCommentsDialog }) => {
   const { container } = useStyles();
 
   return (
@@ -21,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ initialRating }) => {
       </div>
       <div>
         <Button>Add</Button>
-        <Button>See all</Button>
+        <Button onClick={openAllCommentsDialog}>See all</Button>
       </div>
     </header>
   );
