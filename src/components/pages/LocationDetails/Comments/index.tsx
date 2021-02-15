@@ -1,9 +1,9 @@
 import React from "react";
 import { useComments } from "../../../../hooks/swr/useComments";
-import { Avatar, Button, LinearProgress, Typography } from "@material-ui/core";
-import { Star, StarBorder } from "@material-ui/icons";
+import { LinearProgress, Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
-import { Rating } from "@material-ui/lab";
+import Header from "./Header";
+import FirstComments from "./FirstComments";
 
 interface CommentProps {
   locationId: string;
@@ -11,7 +11,7 @@ interface CommentProps {
 }
 
 const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
-  const { container, header, commentContainer, avatar } = useStyles();
+  const { container } = useStyles();
   const { comments, error, isLoading } = useComments(locationId);
 
   if (error) {
@@ -26,31 +26,8 @@ const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
 
   return (
     <div className={container}>
-      <header className={header}>
-        <div>
-          <Typography variant="h4">Ratings</Typography>
-          <Star color="secondary" />
-          <Typography variant="h4" color="secondary">
-            {initialRating}
-          </Typography>
-        </div>
-        <div>
-          <Button>Add</Button>
-          <Button>See all</Button>
-        </div>
-      </header>
-      {firstComments.map(({ image, username, comment, rating, id }) => (
-        <div key={id} className={commentContainer}>
-          <Avatar src={image} className={avatar} />
-          <article>
-            <div>
-              <Typography variant="h5">{username}</Typography>
-              <Rating value={rating} precision={0.5} readOnly emptyIcon={<StarBorder />} />
-            </div>
-            <Typography variant="subtitle1">{comment}</Typography>
-          </article>
-        </div>
-      ))}
+      <Header {...{ initialRating }} />
+      <FirstComments {...{ firstComments }} />
     </div>
   );
 };
