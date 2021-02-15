@@ -25,7 +25,7 @@ const transition: Transition = {
 };
 
 const Details: React.FC<LocationData> = ({ name, description, category }) => {
-  const { container, contentContainer, title, iconContainer } = useStyles();
+  const { contentContainer, title, iconContainer } = useStyles();
 
   const icon =
     category === "Tourist Spots" ? (
@@ -37,7 +37,7 @@ const Details: React.FC<LocationData> = ({ name, description, category }) => {
     );
 
   return (
-    <div className={container}>
+    <>
       <motion.div
         className={iconContainer}
         {...{ variants, transition }}
@@ -55,7 +55,7 @@ const Details: React.FC<LocationData> = ({ name, description, category }) => {
           {description}
         </Typography>
       </div>
-    </div>
+    </>
   );
 };
 

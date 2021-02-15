@@ -5,6 +5,7 @@ import { useLocation } from "../../hooks/swr/useLocation";
 import { useComments } from "../../hooks/swr/useComments";
 import Details from "../../components/pages/LocationDetails/Details";
 import LocationImage from "../../components/pages/LocationDetails/LocationImage";
+import Content from "../../components/pages/LocationDetails/Content";
 
 const Location: NextPage = () => {
   const {
@@ -41,7 +42,7 @@ const Location: NextPage = () => {
         flexDirection: "row",
       }}
     >
-      <Details {...location} />
+      <Content locationData={location} />
       <LocationImage src={image} {...{ name }} />
     </div>
   );
