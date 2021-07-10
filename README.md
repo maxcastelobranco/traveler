@@ -12,7 +12,7 @@
 * [NextJs](https://github.com/vercel/next.js)
 * [ReactJs](https://github.com/facebook/react)
 * [Framer Motion](https://github.com/framer/motion)
-* [Matreial UI](https://github.com/mui-org/material-ui)
+* [Material UI](https://github.com/mui-org/material-ui)
 * [JSON Server](https://github.com/typicode/json-server)
 * [FakerJs](https://github.com/Marak/faker.js)
 
