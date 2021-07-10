@@ -6,9 +6,14 @@ import { useStyles } from "./styles";
 interface HeaderProps {
   initialRating: number;
   openAllCommentsDialog(): void;
+  openAddCommentDialog(): void;
 }
 
-const Header: React.FC<HeaderProps> = ({ initialRating, openAllCommentsDialog }) => {
+const Header: React.FC<HeaderProps> = ({
+  initialRating,
+  openAllCommentsDialog,
+  openAddCommentDialog,
+}) => {
   const { container } = useStyles();
 
   return (
@@ -21,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ initialRating, openAllCommentsDialog })
         </Typography>
       </div>
       <div>
-        <Button>Add</Button>
+        <Button onClick={openAddCommentDialog}>Add</Button>
         <Button onClick={openAllCommentsDialog}>See all</Button>
       </div>
     </header>

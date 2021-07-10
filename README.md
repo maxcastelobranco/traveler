@@ -1,4 +1,12 @@
-# Traveler Website
+<div align="center">
+  <img src=".github/traveler-logo.svg" alt="Traveler logo">
+</div>
+
+## Traveler
+
+<h4 align="center">
+  Traveler is a web app to find tourist locations.
+</h4>
 
 ## Technologies used in this project
 * [NextJs](https://github.com/vercel/next.js)
@@ -9,16 +17,16 @@
 * [FakerJs](https://github.com/Marak/faker.js)
 
 ### Landing Page animation
-![Landing](/readme/landing.gif)
+![Landing](.github/landing.gif)
 
 
 ### City List
-![CityList](/readme/cityList.gif)
+![CityList](.github/cityList.gif)
 
 
 ### City Search
-![CitySearch](/readme/citySearch.gif)
+![CitySearch](.github/citySearch.gif)
 
 
-### City 
-![City](/readme/city.gif)
+### City
+![City](.github/city.gif)

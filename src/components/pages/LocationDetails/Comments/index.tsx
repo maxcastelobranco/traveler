@@ -5,6 +5,7 @@ import { useStyles } from "./styles";
 import Header from "./Header";
 import FirstComments from "./FirstComments";
 import AllComments from "./AllComments";
+import AddComment from "./AddComment";
 
 interface CommentProps {
   locationId: string;
@@ -21,6 +22,13 @@ const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
   const closeAllCommentsDialog = () => {
     setAllCommentsDialogOpen(false);
   };
+  const [addCommentDialogOpen, setAddCommentDialogOpen] = useState(false);
+  const openAddCommentDialog = () => {
+    setAddCommentDialogOpen(true);
+  };
+  const closeAddCommentDialog = () => {
+    setAddCommentDialogOpen(false);
+  };
 
   if (error) {
     return <Typography>{error.message}</Typography>;
@@ -33,13 +41,14 @@ const Comments: React.FC<CommentProps> = ({ locationId, initialRating }) => {
 
   return (
     <div className={container}>
-      <Header {...{ initialRating, openAllCommentsDialog }} />
+      <Header {...{ initialRating, openAllCommentsDialog, openAddCommentDialog }} />
       <FirstComments {...{ firstComments }} />
       <AllComments
         open={allCommentsDialogOpen}
         onClose={closeAllCommentsDialog}
         {...{ comments, initialRating }}
       />
+      <AddComment open={addCommentDialogOpen} onClose={closeAddCommentDialog} />
     </div>
   );
 };
